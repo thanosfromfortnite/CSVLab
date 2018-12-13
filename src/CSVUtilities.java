@@ -6,10 +6,10 @@ import java.util.*;
 import java.io.*;
 
 public class CSVUtilities {
-    ArrayList<ThisIsACryForHelp> CSVData = new ArrayList<>();
-    int numColumns;
+    private ArrayList<ThisIsACryForHelp> CSVData = new ArrayList<>();
+    int numColumns = 0;
 
-    public CSVUtilities(File csvFile) throws IOException {
+    public CSVUtilities(File csvFile) {
         Path path = Paths.get(csvFile.toString());
 
         try (BufferedReader br = Files.newBufferedReader(path, StandardCharsets.US_ASCII)) {
@@ -19,8 +19,19 @@ public class CSVUtilities {
                 String[] att = l.split(",");
                 ThisIsACryForHelp data = new ThisIsACryForHelp(att);
                 CSVData.add(data);
+                numColumns ++;
                 l = br.readLine();
             }
         }
+        catch (IOException dumbassError) {
+            dumbassError.printStackTrace();
+        }
     }
+
+    public List<String> getColumnHeaders() {
+
+    }
+
 }
+
+
