@@ -14,12 +14,11 @@ public class CSVUtilities {
 
         try (BufferedReader br = Files.newBufferedReader(path, StandardCharsets.US_ASCII)) {
             String l = br.readLine();
-
+            numColumns = l.split(",").length;
             while (l != null) {
                 String[] att = l.split(",");
                 ThisIsACryForHelp data = new ThisIsACryForHelp(att);
                 CSVData.add(data);
-                numColumns ++;
                 l = br.readLine();
             }
         }
@@ -28,8 +27,8 @@ public class CSVUtilities {
         }
     }
 
-    public List<String> getColumnHeaders() {
-
+    public void getColumnHeaders() {
+        System.out.println("help");
     }
 
 }
