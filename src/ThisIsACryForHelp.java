@@ -8,4 +8,8 @@ public class ThisIsACryForHelp {
     public String getThing(int num) {
         return data[num];
     }
+
+    public int size() {
+        return data.length;
+    }
 }

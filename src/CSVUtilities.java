@@ -26,11 +26,35 @@ public class CSVUtilities {
             dumbassError.printStackTrace();
         }
     }
-
-    public void getColumnHeaders() {
-        System.out.println("help");
+    public List<String> getColumnHeaders() {
+        ArrayList<String> a = new ArrayList<>();
+        for (int i = 0; i < CSVData.size(); i ++) {
+            a.add(CSVData.get(i).getThing(0));
+        }
+        return a;
     }
 
+    public List<String> getDataString(int column) {
+        ArrayList<String> a = new ArrayList<>();
+        for (int i = 0; i < CSVData.get(column).size(); i ++) {
+            a.add(CSVData.get(column).getThing(i));
+        }
+        return a;
+    }
+
+    public List<Integer> getDataInt(int column) {
+        ArrayList<Integer> a = new ArrayList<>();
+        for (int i = 0; i < CSVData.get(column).size(); i ++) {
+            a.add(Integer.getInteger(CSVData.get(column).getThing(i)));
+        }
+        return a;
+    }
+
+    public List<Double> getDataDouble(int column) {
+        ArrayList<Double> a = new ArrayList<>();
+        for (int i = 0; i < CSVData.get(column).size(); i ++) {
+            a.add(Double.valueOf(CSVData.get(column).getThing(i)));
+        }
+        return a;
+    }
 }
-
-
