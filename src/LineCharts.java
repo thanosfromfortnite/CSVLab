@@ -20,9 +20,9 @@ public class LineCharts extends Application {
         XYChart.Series series = new XYChart.Series();
         series.setName("My portfolio or something");
 
-        series.getData().add(new XYChart.Data(2015, 50));
-        series.getData().add(new XYChart.Data(2016, 3));
-        series.getData().add(new XYChart.Data(2017, 90));
+        series.getData().add(new XYChart.Data(1, 50));
+        series.getData().add(new XYChart.Data(2, 3));
+        series.getData().add(new XYChart.Data(3, 90));
 
 
         Scene scene = new Scene(lineChart, 800, 600);
