@@ -16,12 +16,14 @@ public class LineCharts extends Application {
         xAxis.setLabel("Year");
         final LineChart<Number,Number> lineChart = new LineChart<Number,Number>(xAxis,yAxis);
 
-        lineChart.setTitle("Dropout rates??? lol");
+        lineChart.setTitle("My DDP Grades through years");
         XYChart.Series series = new XYChart.Series();
         series.setName("My portfolio or something");
-        for (int i = 1; i <= file.numColumns; i ++) {
-            series.getData().add(new XYChart.Data(i, file.getColumnHeaders()));
-        }
+
+        series.getData().add(new XYChart.Data(2015, 50));
+        series.getData().add(new XYChart.Data(2016, 3));
+        series.getData().add(new XYChart.Data(2017, 90));
+
 
         Scene scene = new Scene(lineChart, 800, 600);
         lineChart.getData().add(series);
